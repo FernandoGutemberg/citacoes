@@ -1,8 +1,7 @@
 import Citacao from "./components/Citacao";
 import citacoes from "./data"; //aqui vem meus dados ficticios
 
-import { useState } from "react";
-
+import React, { useState } from "react";
 function App() {
   const [indice, setIndice] = useState(0);
 
@@ -12,11 +11,12 @@ function App() {
   };
 
   return (
-    <>
-    <p>{citacoes[indice].texto}</p>
-    <button className="btn btn-success mt-2" onClick={proximaCitacao}>Próxima citação</button>
+    <div className="container mt-5">
+      <Citacao texto={citacoes[indice].texto} autor={citacoes[indice].autor} />
+      <button className="btn btn-success mt-2" onClick={proximaCitacao}>
+        Próxima Citação</button>
 
-    </>
+    </div>
   );
 }
 
